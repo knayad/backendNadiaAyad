@@ -26,6 +26,8 @@ const getReview = async (req, res) => {
 //  CREATE NEW
 const createReview = async (req, res) => {
   const { title, body, author } = req.body;
+  // could add let variables here for empty fields, but I already have those handled on the frontend.
+
   // add doc to db
   try {
     const review = await Review.create({ title, body, author });
