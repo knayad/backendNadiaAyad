@@ -8,6 +8,14 @@ const reviewRoutes = require("./routes/reviews");
 // express app
 const app = express();
 
+// cors config
+app.use(
+  cors({
+    origin: "https://knayad.github.io/portfolio/",
+    credentials: true,
+  })
+);
+
 // global middleware
 app.use(express.json());
 
