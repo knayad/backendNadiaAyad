@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const reviewRoutes = require("./routes/reviews");
 
@@ -16,14 +17,17 @@ app.use((req, res, next) => {
   next();
 });
 
-// routes (technically middleware); no last slash
+// cors config w/ req cors const
 app.use(
   cors({
     origin: "https://knayad.github.io/portfolio/",
+    methods: ["GET", "POST"],
     credentials: true,
-  }),
-  reviewRoutes
+  })
 );
+
+// routes (technically middleware); no last slash
+app.use("/api/reviews", reviewRoutes);
 
 // connect to db
 mongoose
