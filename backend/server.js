@@ -19,6 +19,14 @@ app.use((req, res, next) => {
 // routes (technically middleware); no last slash
 app.use("/api/reviews", reviewRoutes);
 
+// cors config
+app.use(
+  cors({
+    origin: "https://knayad.github.io/portfolio/",
+    credentials: true,
+  })
+);
+
 // connect to db
 mongoose
   .connect(process.env.MONGO_URI)
