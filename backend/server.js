@@ -8,14 +8,6 @@ const reviewRoutes = require("./routes/reviews");
 // express app
 const app = express();
 
-// cors config
-app.use(
-  cors({
-    origin: "https://knayad.github.io/portfolio/",
-    credentials: true,
-  })
-);
-
 // global middleware
 app.use(express.json());
 
@@ -25,7 +17,7 @@ app.use((req, res, next) => {
 });
 
 // routes (technically middleware); no last slash
-// app.use("/api/reviews", reviewRoutes);
+app.use("/api/reviews", reviewRoutes);
 
 // connect to db
 mongoose
