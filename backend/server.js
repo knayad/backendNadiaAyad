@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 // cors config w/ req cors const
 app.use(
   cors({
-    origin: "https://knayad.github.io/portfolio/",
+    origin: "https://knayad.github.io",
     methods: ["GET", "POST"],
     credentials: true,
   })
