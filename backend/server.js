@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 // routes (technically middleware); no last slash
-app.use("/api/reviews", reviewRoutes);
+// app.use("/api/reviews", reviewRoutes);
 
 // connect to db
 mongoose
